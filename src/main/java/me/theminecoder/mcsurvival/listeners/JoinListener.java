@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 import java.util.stream.Stream;
 
 /**
@@ -74,6 +75,8 @@ public class JoinListener implements Listener {
                 player = PlayerManager.getPlayer(bukkitPlayer);
             }
         }
+
+        player.setLastJoin(new Date());
 
         Stream.of(
                 ChatColor.YELLOW + "Welcome to theminecoder's survival server!",
