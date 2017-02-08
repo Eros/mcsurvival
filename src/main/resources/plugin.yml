@@ -2,3 +2,13 @@ name: Survival
 version: live
 main: me.theminecoder.mcsurvival.Survival
 website: https://github.com/theminecoder/mcsurvival
+commands:
+  tpa:
+    description: Request to teleport to another online player with this command!
+    usage: /tpa <target>
+  tpaccept:
+    description: Accept pending teleport requests
+    usage: /tpaccept
+  tpdeny:
+    description: Deny pending teleport requests
+    usage: /tpdeny
