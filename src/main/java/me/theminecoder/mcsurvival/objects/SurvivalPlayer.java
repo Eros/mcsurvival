@@ -17,6 +17,8 @@ public class SurvivalPlayer {
     private Date firstJoin;
     private Date lastJoin;
 
+    private String lastMessaged;
+
     private boolean receivedStarterKit = false;
 
     SurvivalPlayer(){  //GSON
@@ -28,7 +30,7 @@ public class SurvivalPlayer {
         this.firstJoin = new Date();
     }
 
-    public UUID getUuid() {
+    public UUID getUUID() {
         return uuid;
     }
 
@@ -48,9 +50,13 @@ public class SurvivalPlayer {
         return lastJoin;
     }
 
+    public String getLastMessaged() { return this.lastMessaged; }
+
     public void setLastJoin(Date lastJoin) {
         this.lastJoin = lastJoin;
     }
+
+    public void setLastMessaged(String playerName) { this.lastMessaged = playerName; }
 
     public boolean hasReceivedStarterKit() {
         return receivedStarterKit;

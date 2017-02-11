@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import me.theminecoder.mcsurvival.commands.TpaCommand;
 import me.theminecoder.mcsurvival.commands.TpacceptCommand;
 import me.theminecoder.mcsurvival.commands.TpdenyCommand;
+import me.theminecoder.mcsurvival.commands.message.MessageCommand;
+import me.theminecoder.mcsurvival.commands.message.ReplyCommand;
 import me.theminecoder.mcsurvival.listeners.ChatListener;
 import me.theminecoder.mcsurvival.listeners.DeathListener;
 import me.theminecoder.mcsurvival.listeners.JoinListener;
@@ -26,7 +28,11 @@ public final class Survival extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        this.getDataFolder().mkdirs();
+        if(this.getDataFolder().mkdirs()) {
+            getLogger().info("Created directories...");
+        } else {
+            getLogger().severe("Failed to create directories...");
+        }
 
         gson = new Gson();
 
@@ -39,6 +45,9 @@ public final class Survival extends JavaPlugin {
         Bukkit.getPluginCommand("tpa").setExecutor(new TpaCommand());
         Bukkit.getPluginCommand("tpaccept").setExecutor(new TpacceptCommand());
         Bukkit.getPluginCommand("tpdeny").setExecutor(new TpdenyCommand());
+        Bukkit.getPluginCommand("msg").setExecutor(new MessageCommand());
+        Bukkit.getPluginCommand("r").setExecutor(new ReplyCommand());
+
     }
 
     @Override

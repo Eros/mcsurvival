@@ -12,3 +12,11 @@ commands:
   tpdeny:
     description: Deny pending teleport requests
     usage: /tpdeny
+  msg:
+    description: Message a player
+    usage: /msg <target> <message>
+    aliases: [m, message, t, tell, w, whisper]
+  r:
+    description: Reply to a message
+    usage: /r <message>
+    aliases: [reply]

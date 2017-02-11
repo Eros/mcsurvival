@@ -5,6 +5,7 @@ import com.google.common.cache.CacheBuilder;
 import me.theminecoder.mcsurvival.objects.SurvivalPlayer;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -22,7 +23,7 @@ public final class PlayerManager {
             .expireAfterWrite(120, TimeUnit.SECONDS)
             .maximumSize(500)
             .build();
-
+    
     private PlayerManager(){
     }
 
@@ -37,7 +38,6 @@ public final class PlayerManager {
     public static SurvivalPlayer getPlayer(UUID uuid) {
         return playerMap.get(uuid);
     }
-
 
     public static Cache<UUID, UUID> getTeleportCache() {
         return teleportCache;

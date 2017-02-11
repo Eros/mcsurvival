@@ -36,6 +36,9 @@ public class TpaCommand implements CommandExecutor {
             bukkitPlayer.sendMessage(ChatColor.RED + args[0] + " is not online!");
             return true;
 
+        } else if(bukkitTarget == bukkitPlayer) {
+            bukkitPlayer.sendMessage(ChatColor.RED + "You can't teleport to yourself!");
+            return true;
         }
 
         PlayerManager.getTeleportCache().put(bukkitTarget.getUniqueId(), bukkitPlayer.getUniqueId());
@@ -44,9 +47,10 @@ public class TpaCommand implements CommandExecutor {
                 ChatColor.YELLOW + bukkitPlayer.getName()  + " has requested to teleport to you!",
                 ChatColor.YELLOW + "Use " + ChatColor.AQUA + "/tpaccept" + ChatColor.YELLOW + " to accept the request",
                 ChatColor.YELLOW + "Use " + ChatColor.AQUA + "/tpdeny" + ChatColor.YELLOW + " to accept the request",
-                ChatColor.YELLOW + "This request will expire in  120 seconds!"
+                ChatColor.YELLOW + "This request will expire in 120 seconds!"
 
         ).forEach(bukkitTarget::sendMessage);
+
         bukkitPlayer.sendMessage(ChatColor.YELLOW + "Teleport request sent to "  + bukkitTarget.getName());
         return true;
     }
