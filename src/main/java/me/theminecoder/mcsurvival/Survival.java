@@ -1,9 +1,9 @@
 package me.theminecoder.mcsurvival;
 
 import com.google.gson.Gson;
-import me.theminecoder.mcsurvival.commands.TpaCommand;
-import me.theminecoder.mcsurvival.commands.TpacceptCommand;
-import me.theminecoder.mcsurvival.commands.TpdenyCommand;
+import me.theminecoder.mcsurvival.commands.teleport.TpaCommand;
+import me.theminecoder.mcsurvival.commands.teleport.TpacceptCommand;
+import me.theminecoder.mcsurvival.commands.teleport.TpdenyCommand;
 import me.theminecoder.mcsurvival.commands.message.MessageCommand;
 import me.theminecoder.mcsurvival.commands.message.ReplyCommand;
 import me.theminecoder.mcsurvival.listeners.ChatListener;
@@ -47,7 +47,6 @@ public final class Survival extends JavaPlugin {
         Bukkit.getPluginCommand("tpdeny").setExecutor(new TpdenyCommand());
         Bukkit.getPluginCommand("msg").setExecutor(new MessageCommand());
         Bukkit.getPluginCommand("r").setExecutor(new ReplyCommand());
-
     }
 
     @Override

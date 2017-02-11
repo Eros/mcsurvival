@@ -1,4 +1,4 @@
-package me.theminecoder.mcsurvival.commands;
+package me.theminecoder.mcsurvival.commands.teleport;
 
 import me.theminecoder.mcsurvival.managers.PlayerManager;
 import org.bukkit.Bukkit;

@@ -17,7 +17,7 @@ public class SurvivalPlayer {
     private Date firstJoin;
     private Date lastJoin;
 
-    private String lastMessaged;
+    private transient String lastMessaged;
 
     private boolean receivedStarterKit = false;
 
