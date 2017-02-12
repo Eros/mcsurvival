@@ -88,10 +88,11 @@ public class JoinListener implements Listener {
         if (!player.hasReceivedStarterKit()) {
             player.setReceivedStarterKit(true);
             bukkitPlayer.sendMessage(ChatColor.BLUE + "Since we see this is your first time, you have received the starter kit!");
-            bukkitPlayer.getInventory().addItem(new ItemStack(Material.STONE_PICKAXE));
-            bukkitPlayer.getInventory().addItem(new ItemStack(Material.STONE_AXE));
-            bukkitPlayer.getInventory().addItem(new ItemStack(Material.APPLE, 5));
-
+            Stream.of(
+                    new ItemStack(Material.STONE_PICKAXE),
+                    new ItemStack(Material.STONE_AXE),
+                    new ItemStack(Material.APPLE, 5)
+            ).forEach(bukkitPlayer.getInventory()::addItem);
         }
     }
 
