@@ -1,5 +1,6 @@
 package me.theminecoder.mcsurvival.listeners;
 
+import com.sk89q.squirrelid.Profile;
 import me.theminecoder.mcsurvival.Survival;
 import me.theminecoder.mcsurvival.managers.PlayerManager;
 import me.theminecoder.mcsurvival.objects.SurvivalPlayer;
@@ -50,6 +51,8 @@ public class JoinListener implements Listener {
         if (event.getLoginResult() != AsyncPlayerPreLoginEvent.Result.ALLOWED) {
             return;
         }
+
+        Survival.getInstance().getProfileCache().put(new Profile(event.getUniqueId(), event.getName()));
 
         PlayerManager.getPlayerMap().put(event.getUniqueId(), player);
     }

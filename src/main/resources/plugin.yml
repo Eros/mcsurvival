@@ -20,3 +20,6 @@ commands:
     description: Reply to a message
     usage: /r <message>
     aliases: [reply]
+  reloaddata:
+    description: Reload main data files
+    usage: /reloaddata
