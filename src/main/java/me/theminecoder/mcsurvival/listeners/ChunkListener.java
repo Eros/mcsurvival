@@ -16,15 +16,15 @@ public class ChunkListener implements Listener {
     @EventHandler
     public void onChunkLoad(ChunkLoadEvent event) {
         WarpPadManager.getWarpPads().stream().filter(warpPad ->
-                event.getChunk().getX() == warpPad.getLocation().getChunk().getX() &&
-                        event.getChunk().getZ() == warpPad.getLocation().getChunk().getZ()).forEach(WarpPad::spawn);
+                event.getChunk().getX() == warpPad.getLocation().getBlockX() >> 4 &&
+                        event.getChunk().getZ() == warpPad.getLocation().getBlockZ() >> 4).forEach(WarpPad::spawn);
     }
 
     @EventHandler
     public void onChunkUnload(ChunkUnloadEvent event) {
         WarpPadManager.getWarpPads().stream().filter(warpPad ->
-                event.getChunk().getX() == warpPad.getLocation().getChunk().getX() &&
-                        event.getChunk().getZ() == warpPad.getLocation().getChunk().getZ()).forEach(WarpPad::despawn);
+                event.getChunk().getX() == warpPad.getLocation().getBlockX() >> 4 &&
+                        event.getChunk().getZ() == warpPad.getLocation().getBlockZ() >> 4).forEach(WarpPad::despawn);
     }
 
 }
