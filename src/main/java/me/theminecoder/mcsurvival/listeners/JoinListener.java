@@ -85,7 +85,9 @@ public class JoinListener implements Listener {
                 ChatColor.YELLOW + "Welcome to theminecoder's survival server!",
                 "",
                 ChatColor.YELLOW + "This server is comprised of an open source plugin which anyone can edit if they wish to.",
-                ChatColor.YELLOW + "Check it out here: " + ChatColor.AQUA + "https://github.com/theminecoder/mcsurvival"
+                ChatColor.YELLOW + "Check it out here: " + ChatColor.AQUA + "https://github.com/theminecoder/mcsurvival",
+                "",
+                ChatColor.RED + "This will be shutting down on March 29th (AEST)"
         ).forEach(event.getPlayer()::sendMessage);
 
         if (!player.hasReceivedStarterKit()) {
